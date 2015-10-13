@@ -10,7 +10,6 @@ module RelayPlay
       field :talent, -> { !RelayPlay::Types::TalentType }
       field :region, -> { !RelayPlay::Types::RegionType }
 
-      # field :friends, -> { types[RelayPlay::Types::FairyType] }
       connection :friends, -> { RelayPlay::Types::FairyConnection }
     end
 

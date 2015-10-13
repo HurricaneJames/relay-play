@@ -3,18 +3,7 @@ module RelayPlay
     name "Mutations"
     description "The mutation root for this schema"
 
-    field :moveFairy do
-      type RelayPlay::Types::FairyType
+    field :moveFairy, field: RelayPlay::Mutations::MoveFairyMutation.field
 
-      argument :fairyId, !types.Int
-      argument :regionId, !types.Int
-
-      resolve -> (obj, args, ctx) do
-        fairy = Fairy.where(id: args["fairyId"]).first
-        fairy.region = Region.where(id: args["regionId"]).first
-        fairy.save!
-        fairy
-      end
-    end
   end
 end

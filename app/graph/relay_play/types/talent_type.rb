@@ -4,7 +4,6 @@ module RelayPlay
       name 'Talent'
 
       field :name, !types.String
-      # field :fairies, -> { types[RelayPlay::Types::FairyType] }
       connection :fairies, -> { RelayPlay::Types::FairyConnection }
     end
   end
