@@ -2,14 +2,18 @@ module RelayPlay
   MutationType = GraphQL::ObjectType.define do
     name "Mutations"
     description "The mutation root for this schema"
-    field :watchButterfly do
-      type types.String
-      description "demo"
-      argument :number, types.Int, "[optional] number"
+
+    field :moveFairy do
+      type RelayPlay::Types::FairyType
+
+      argument :fairyId, !types.Int
+      argument :regionId, !types.Int
+
       resolve -> (obj, args, ctx) do
-        butterfly = "butterfly"
-        butterfly += args["number"] if args["number"].present?
-        butterfly
+        fairy = Fairy.where(id: args["fairyId"]).first
+        fairy.region = Region.where(id: args["regionId"]).first
+        fairy.save!
+        fairy
       end
     end
   end
