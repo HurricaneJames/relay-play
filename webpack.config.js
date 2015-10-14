@@ -27,7 +27,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js?$/,
-      loaders: ['react-hot', 'babel'],
+      loaders: ['react-hot', 'babel?plugins=./babelRelayPlugin'],
       include: path.join(__dirname, 'app/react/'),
       exclude: /node_modules/
     }]

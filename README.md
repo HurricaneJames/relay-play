@@ -19,4 +19,11 @@ open http://localhost:3000/graphiql
 
 # Demo Application (in dev mode this has hot reloading)
 open http://localhost:3000
+
+# every time you update the schema...
+# kill both servers then run
+npm run updateSchema
+rails s
+npm start
+# looking for a better way to handle this (especially the updateSchema part)
 ````

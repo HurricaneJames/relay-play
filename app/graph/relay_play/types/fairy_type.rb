@@ -12,7 +12,5 @@ module RelayPlay
 
       connection :friends, -> { RelayPlay::Types::FairyConnection }
     end
-
-    FairyConnection = GraphQL::Relay::RelationConnection.create_type(FairyType)
   end
 end

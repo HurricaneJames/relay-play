@@ -5,6 +5,14 @@ module RelayPlay
 
     field :node, field: RelayPlay::NodeIdentification.field
 
+    field :viewer do
+      type RelayPlay::Types::ViewerType
+      description "A fairy world viewer"
+      resolve -> (obj, args, ctx) do
+        {}
+      end
+    end
+
     field :fairies do
       type types[ RelayPlay::Types::FairyType ]
       description "Fairies"
