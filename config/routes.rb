@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   match 'graphql', to: 'graphql#exec', via: [:get, :post]
-  root to: 'graphql#graphiql'
+  match 'graphiql', to: 'graphql#graphiql', via: [:get, :post]
+  root to: 'demo#alpha'
 end

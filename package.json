@@ -1,0 +1,59 @@
+{
+  "name": "relay-play",
+  "version": "1.0.0",
+  "description": "A playground for Relay/GraphQL/React/Rails",
+  "scripts": {
+    "start": "node webpack.server.js",
+    "build": "./node_modules/.bin/webpack -p --config webpack.production.config.js app/react/components.js app/assets/javascripts/react_bundle.js",
+    "build-watch": "./node_modules/.bin/webpack -d --watch --config webpack.production.config.js app/react/components.js app/assets/javascripts/react_bundle.js ",
+    "test": "npm run lint && ./node_modules/.bin/mocha --opts jstest/mocha.opts --compilers js:babel/register jstest/*-test.js jstest/support/*-test.js",
+    "test-watch": "./node_modules/.bin/mocha -w --opts jstest/mocha.opts --compilers js:babel/register jstest/*-test.js jstest/support/*-test.js",
+    "lint": "npm run lint-tests && npm run lint-code",
+    "lint-tests": "./node_modules/.bin/eslint jstest",
+    "lint-code": "./node_modules/.bin/eslint ./app/assets/javascripts/components",
+    "graphiql": "cp ./node_modules/graphiql/graphiql.js ./app/assets/javascripts/ && cp ./node_modules/graphiql/graphiql.css ./app/assets/stylesheets/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HurricaneJames/relay-play"
+  },
+  "keywords": [
+    "react",
+    "relay",
+    "graphql",
+    "rails",
+    "playground",
+    "sandbox",
+    "demo"
+  ],
+  "author": "James Burnett <HurricaneJamesEsq@gmail.com> (https://github.com/HurricaneJames/relay-play)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HurricaneJames/relay-play/issues"
+  },
+  "homepage": "https://github.com/HurricaneJames/relay-play",
+  "engines": {
+    "node": "4.0.x"
+  },
+  "devDependencies": {
+    "babel": "^5.1.9",
+    "babel-core": "^5.8.24",
+    "babel-eslint": "^4.1.2",
+    "babel-loader": "^5.3.2",
+    "eslint": "^1.4.3",
+    "eslint-plugin-react": "^3.4.0",
+    "expect.js": "^0.3.1",
+    "graphiql": "^0.3.1",
+    "graphql": "^0.4.2",
+    "jsdom": "^6.5.0",
+    "mocha": "^2.0.1",
+    "radium": "^0.14.1",
+    "react": "^0.14.0",
+    "react-addons-test-utils": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-hot-loader": "^1.3.0",
+    "sinon": "^1.14.1",
+    "webpack": "^1.12.1",
+    "webpack-dev-server": "^1.11.0"
+  }
+}

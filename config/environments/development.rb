@@ -1,6 +1,13 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # setup react hot loader/webpack in dev mode only
+  config.action_controller.asset_host = Proc.new { |source|
+    if source =~ /react_bundle\.js$/i
+      "http://localhost:8090"
+    end
+  }
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
