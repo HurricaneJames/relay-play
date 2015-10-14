@@ -6,6 +6,10 @@ module RelayPlay
 
       connection :fairies, -> { RelayPlay::Types::FairyConnection } do
         resolve -> (obj, args, ctx) {
+          # Rails 3.x
+          # Fairy.scoped
+
+          # Rails 4.x
           Fairy.all
         }
       end
