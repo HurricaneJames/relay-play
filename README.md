@@ -4,6 +4,10 @@ Note: I really need to stop watching Disney fairy movies with my daughter...
 
 ## Getting Starting
 ````
+# setup
+bundle install
+npm install
+
 # Backend
 rails s
 
