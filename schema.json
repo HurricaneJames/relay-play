@@ -42,7 +42,7 @@
             },
             {
               "name": "viewer",
-              "description": "A fairy world viewer",
+              "description": "A fairy world viewer (relay hack to get at fairies)",
               "args": [],
               "type": {
                 "kind": "OBJECT",
